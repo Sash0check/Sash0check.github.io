@@ -1,0 +1,292 @@
+
+/*.is_overlay{ display: block; width: 100%; height: 100%; }*/
+
+#video_bg {
+	/* Делаем так, чтобы видеофон занимал фиксированное положение. */
+	position: fixed;
+	top: 0;
+	left: 0;
+	/* Располагаем наш фон под всем содержимым на странице.
+    Для этого используем отрицательный z-index. */
+	z-index: -1000;
+	/* Растягиваем видео так, чтобы не было видно черных полос и
+	чтобы независимо от разрешения экрана видеофон занимал все рабочее пространство. */
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+/* Arrows */
+.ar-prev,
+.ar-next
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    margin-top: -5%;
+    cursor: pointer;
+
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.ar-prev:hover,
+.ar-prev:focus,
+.ar-next:hover,
+.ar-next:focus
+{
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+.ar-prev:hover:before,
+.ar-prev:focus:before,
+.ar-next:hover:before,
+.ar-next:focus:before
+{
+    opacity: 1;
+}
+.ar-prev.slick-disabled:before,
+.ar-next.slick-disabled:before
+{
+    opacity: .25;
+}
+
+.ar-prev:before,
+.ar-next:before
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 120px;
+    line-height: 1;
+
+    opacity: .75;
+    color: white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ar-prev
+{
+    left: -125px;
+}
+[dir='rtl'] .ar-prev
+{
+    right: -25px;
+    left: auto;
+}
+.ar-prev:before
+{
+    content: '←';
+}
+[dir='rtl'] .ar-prev:before
+{
+    content: '→';
+}
+
+.ar-next
+{
+    right: -25px;
+}
+[dir='rtl'] .ar-next
+{
+    right: auto;
+    left: -25px;
+}
+.ar-next:before
+{
+    content: '→';
+}
+[dir='rtl'] .ar-next:before
+{
+    content: '←';
+}
+
+
+/* Dots */
+.dotted.slider
+{
+    margin-bottom: 30px;
+}
+
+.dots
+{
+    position: absolute;
+    bottom: -25px;
+	
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.dots li button:hover,
+.dots li button:focus
+{
+    outline: none;
+}
+.dots li button:hover:before,
+.dots li button:focus:before
+{
+    opacity: 1;
+}
+.dots li button:before
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .25;
+    color: white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.dots li.slick-active button:before
+{
+    opacity: .75;
+    color: white;
+}
+.black_dots
+{
+    position: absolute;
+    bottom: -25px;
+	left: -5%;
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.black_dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.black_dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.black_dots li button:hover,
+.black_dots li button:focus
+{
+    outline: none;
+}
+.black_dots li button:hover:before,
+.black_dots li button:focus:before
+{
+    opacity: 1;
+}
+.black_dots li button:before
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.black_dots li.slick-active button:before
+{
+    opacity: .75;
+    color: black;
+}
