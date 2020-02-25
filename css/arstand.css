@@ -356,6 +356,23 @@ body {
     }
 }
 
+.footer-gallery{
+    margin-top: 5%;
+}
+
+.gallery_text{
+    color: white;
+}
+
+.gallery_image{
+    max-height: 400px;
+}
+
+.gallery_logo{
+    max-height: 200px;
+    border-radius: 50%;
+}
+
 /* modal window style is here*/
 /*
 .modal {
